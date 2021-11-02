@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Humanist521 BT Roman';
+    src: url('Humanist521BT-Roman.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Humanist521 BT';
+    src: url('Humanist521BT-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

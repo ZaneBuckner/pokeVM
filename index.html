@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" id="foo">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokéVM</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./resources/fonts/Futura/stylesheet.css">
+    <link rel="stylesheet" href="./resources/fonts/Gill Sans/stylesheet.css">
+    <link rel="stylesheet" href="./resources/fonts/Pokemon/stylesheet.css">
+    <link rel="stylesheet" href="./resources/fonts/Humanist521/stylesheet.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-img" href="./index.html"><div class="shadow"></div></div>
+        <a href="./index.html"><h1>PokéVM</h1></a>
+
+        <form class="search_wrapper" title="Search">
+            <input class="search-input" type="text" placeholder="Pokémon Search" aria-label="search">
+            <img id="search-icon" src="./resources/icons/search-icon.svg">
+
+            <div class="search-dropdown" aria-expanded="false">
+                <div class="search-results"></div>
+            </div>
+        </form>
+
+        <div id="menu-icon" title="Menu">
+            <div class="menu-dropdown" aria-expanded="false">
+                <div class="option option-favorites" title="Favorites">
+                    <h2>Favorites</h2>
+                    <img id="favorite-icon" src="./resources/icons/favorite-icon.svg">
+                </div>
+
+                <div class="option option-tilt" title="Tilt">
+                    <h2>Tilt On</h2>
+                    <img id="tilt-icon" src="./resources/icons/tilt-icon.svg">
+                </div>
+
+                <div class="option option-filters" title="Filters">
+                    <h2>Filters</h2>
+                    <img id="filter-icon" src="./resources/icons/filter-icon.svg">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="pokemon-card tilt parallax">
+            <div class="card-content none">
+                <div class="card header"></div>
+                <div class="card evolution-display"></div>
+                <div class="card pokemon-display none"></div>
+                <div class="card banner none"></div>
+                <div class="card moves-display none"></div>
+                <div class="card damage-relations-wrapper none"></div>
+                <div class="card fact none"></div>
+                <div class="card copyright none"></div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-wrapper">
+            <p>&#169 2021 Pokémon Virtual Machine &nbsp;</p>
+            <!-- <p>bucknerzane@gmail.com</p> -->
+            <div class="links">
+                <div class="email">
+                    <img srcset="./resources/icons/email-icon.svg">
+                    <!-- <p>bucknerzane@gmail.com</p> -->
+                </div>
+
+                <a href="https://github.com/ZaneBuckner" title="GitHub" target="_blank">
+                    <img srcset="./resources/icons/github-icon.svg" type="image/svg+xml">
+                </a>
+
+                <a href="https://www.linkedin.com/in/ZaneBuckner/" title="LinkedIn" target="_blank">
+                    <img srcset="./resources/icons/linkedin-icon.svg" type="image/svg+xml">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- <script type="module" src="/index.js"></script> -->
+    <script type="module" src="./modules/model.js"></script>
+    <script type="module" src="./modules/controller.js"></script>
+    <script type="module" src="./modules/view.js"></script>
+    <script type="text/javascript" src="./modules/lib/vanilla-tilt.min.js"></script>
+</body>
+</html>
