@@ -135,7 +135,6 @@ header {
 
         width: 1.5rem;
         height: 0.2rem;
-        /* background: linear-gradient(to right, rgba(36,36,36,0.1), rgba(36,36,36,0.4), rgba(36,36,36,0.6), rgba(36,36,36,0.4), rgba(36,36,36,0.1)); */
         background: radial-gradient(rgba(36,36,36,0.6) 0%, rgba(36,36,36,0.4) 30%, rgba(36,36,36,0.2) 60%, rgba(36,36,36,0) 100%);
         -webkit-background: radial-gradient(rgba(36,36,36,0.6) 0%, rgba(36,36,36,0.4) 30%, rgba(36,36,36,0.2) 60%, rgba(36,36,36,0) 100%);
         border-radius: 50%;
@@ -912,14 +911,14 @@ footer {
 
 /* ========== FLUID TYPOGRAPHY ==========
     RANGE   TARGET    VW (px)   HTML-FONT (px)
-    MIN     MOBILE    >= 300    16.0
-    MEDIAN  TABLET    ~= 850    24.0
-    MAX     DESKTOP+  <= 1400   32.0
+    MIN     MOBILE    >= 375    16.0
+    MEDIAN  TABLET    ~= 790    24.0
+    MAX     DESKTOP+  <= 1200   32.0
 
     SAUCE:    https://www.madebymike.com.au/writing/fluid-type-calc-examples/
     EQUATION:  minFont + (maxFont - minFont) * [(100vw - minVPWidth) / (maxVPWidth - minVPWidth)]
     VISUAL:    fluidTypography() from ./controller.js
-    CARD MUST MATCH PHYSICAL CARD ASPECT RATIO => w:h => 6.3:8.8cm => ~71.6%
+    CARD MUST MATCH PHYSICAL CARD ASPECT RATIO => w:h => 6.3:8.8cm => ~71.5%
    ====================================== */
 html {
     font-size: 16px;
@@ -927,7 +926,7 @@ html {
 
 @media screen and (min-width: 375px) {
     html {
-        /* font-size: calc(16px + (32px - 16px) * ( (100vw - 375px) / (1200 - 375) )); */
+        /* calc(16px + (32px - 16px) * ( (100vw - 375px) / (1200 - 375) )); */
         /* minPX + (maxPX - minPX) * [(100VW - minPX) / (maxPX - minPX)] */
         font-size: calc(16px + 16 * ((100vw - 375px) / 825));
     }
@@ -938,56 +937,3 @@ html {
         font-size: 32px;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* font-size: calc(16px + (32px - 16px) * ( (100vw - 300px) / (1400 - 300) )); */
-/* minPX + (maxPX - minPX) * [(100VW - minPX) / (maxPX - minPX)] */
-/* font-size: calc(16px + 16 * ((100vw - 300px) / 1100)); */
-
-
-/* ========== MEDIA QUERY ==========
-    MOBILE:  >= 600px
-    TABLET:  >= 750PX  
-    DESKTOP: >= 1200PX
-    min-width: 600px "IF screen size is 600 or more"
-    max-width: 1400px "IF screen size is 1400 or less"
-   ================================= */
-/*
-Fluid Typography
-HTML font-size is continuously scaled based on viewport width.
-An alternate method compared to specified breakpoints.
-
-Small   (mobile):   max-width: 600px
-Medium  (tablet):   min-width: 800px
-Large   (desktop):  min-width: 1200px
-XLarge  (desktop):  min-width: 1400px
-
-calc( minFont + (maxFont - minFont) * [(100vw - minVPFont) / (maxVPFont - minVPFont)] );
-
-CSS calc() Rules:
-1. Multiplication
-    - At least one argument must be a number
-    - calc(16px * 100) or calc(100 * 16px)
-2. Division
-    - Argument positioned on the right must be a number.
-    - calc(16px / 100)
-3. Addition & Subtraction
-    - '+' and '-' must be surrounded by whitespace
-    - calc(16px + 16px)
-4. Nested calc() is allowed, each additional calc() is treated as '()'.
-
-https://ryanfeigenbaum.com/easy-responsive-typography/
-*/

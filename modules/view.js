@@ -330,35 +330,3 @@ export const renderDom = function () {
         damage: renderDamageRelations
     };
 };
-
-
-
-
-
-
-
-
-
-
-
-
-// function fetchSprites(resourceType) {
-//     let pokemonImg = document.querySelector('.pokemon-image');
-
-//     if (resourceType === 'gif') {
-//         const urls = [
-//             `https://www.cpokemon.com/pokes/animated/3ds/${pokemon.id}.gif`, // pokemon: {id} number
-//             `https://play.pokemonshowdown.com/sprites/ani/${pokemon.name}.gif`, // pokemon: {name} string
-//             `https://play.pokemonshowdown.com/sprites/gen5ani/${pokemon.name}.gif` // pokemon: {name} string
-//         ];
-        
-//         return pokemonImg.addEventListener('error', (e) => {
-//             fetch('../modules/data/search-data.json').then(res => res.json()).then(pokemonSet => {
-//                 let match = pokemonSet.filter(pokemon => pokemon.id === id);
-//                 let name = match[0].name;
-//                 e.target.src = `https://play.pokemonshowdown.com/sprites/ani/${name}.gif`;
-//             })
-//         });
-//     };
-//     return `https://www.cpokemon.com/pokes/pokemon-artwork/${id}.png`;
-// };

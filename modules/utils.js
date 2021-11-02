@@ -1,15 +1,4 @@
 
-/*
-jQuery domElement.on() event delegation method attaches an event listener that is executed on a child of that DOM element. Very powerful for elements add to the DOM dynamically. A single event listener will work on all childern, including those added to the DOM after we register the event handler.
-
-https://flaviocopes.com/javascript-event-delegation/
-
-
-*/
-
-// RENDER ERRORS:
-    // "body-slam" => Body ♂
-
 export function formatValues() {
     
     function formatName(string) {
@@ -61,7 +50,6 @@ export function formatValues() {
 };
 
 
-
 /**
  * @param {string[]} types - The types of a pokemon.
  * @returns {string} The CSS linear-gradient background property.
@@ -98,29 +86,11 @@ export function getBackgroundGradient(types) {
     let targetColor = colorReference[`${type}`].match(/\d+/g);
     
     const getAnalogousArray = (targetColor) => {
-        // const hueVariations = [25, 15, -15, -25];
         const hueVariations = [30, 15, -15, -30];
         let colors = hueVariations.map(value => `hsl(${targetColor[0] - value}, ${targetColor[1]}%, ${targetColor[2]}%)`);
         let result = `linear-gradient(45deg, ${colors[0]}, ${colors[1]}, ${colors[2]}, ${colors[3]})`;
-        // console.log(`${type.toUpperCase()}, ${colorReference[`${type}`]} %c__________`, `background:${colorReference[`${type}`]}`);
-        // colors.map((color, i) => console.log(`\tAnalogous${i + 1}: ${color} %c__________`, `background:${color}`));
         return result;
     };
 
     return getAnalogousArray(targetColor);
 };
-
-
-
-
-
-// export function pokemonReferenceData() {
-//     return pokemonImg.addEventListener('error', (e) => {
-//         fetch('../modules/data/search-data.json').then(res => res.json()).then(pokemonSet => {
-//             let match = pokemonSet.filter(pokemon => pokemon.id === id);
-//             let name = match[0].name;
-//             e.target.src = `https://play.pokemonshowdown.com/sprites/ani/${name}.gif`;
-//         })
-//     });
-// };
-

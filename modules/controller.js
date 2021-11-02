@@ -1,12 +1,5 @@
 import { Pokemon } from './model.js';
-import { formatValues } from './utils.js'
-
-
-// VanillaTilt.init(document.querySelector('.tilt'), {
-//     reverse: false,
-//     glare: true,
-//     'max-glare': 0.40
-// });
+import { formatValues } from './utils.js';
 
 
 
@@ -267,18 +260,8 @@ function menuEvent() {
 
 function testFluidTypography(cardWidth, cardHeight, cardFontSize) {
     console.clear();
-    const css = 'font-size: 14px; color:#7793CA';
     const htmlFontSize = window.getComputedStyle(document.documentElement).fontSize;
     const cardAspectRatio = (cardWidth / cardHeight).toFixed(3) * 100;
-
-    // let html = window.getComputedStyle(document.documentElement).fontSize;
-    // let aspectRatio = ((pokemonCard.offsetWidth / pokemonCard.offsetHeight) * 100).toFixed(2);
-
-    // console.log(
-    // `\tViewport Width: %c${window.innerWidth}px%c
-    // HTML Font Size: %c${html}%c
-    // Pokemon Card Aspect Ratio: %c${aspectRatio}%`,
-    // css, 'color:none', css, 'color:none', css);
 
     console.log(`
     Viewport Width:  ${window.innerWidth}px
