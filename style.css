@@ -411,8 +411,8 @@ main {
 
     /* overflow: hidden; */
     user-select: none;
-    transform-style: preserve-3d;
-    transform: perspective(1000px);
+    /* transform-style: preserve-3d;
+    transform: perspective(1000px); */
 }
 
 .card-content {
@@ -431,8 +431,8 @@ main {
     animation: animatedGradient 5s ease-in-out infinite alternate;
     pointer-events: none;
 
-    transform-style: preserve-3d;
-    transform: perspective(1000px);
+    /* transform-style: preserve-3d;
+    transform: perspective(1000px); */
     transform: translateZ(1px);
 }
 
@@ -454,8 +454,8 @@ main {
     margin-top: 1em;
     margin-bottom: 0.5em;
 
-    transform-style: preserve-3d;
-    transform: perspective(1000px);
+    /* transform-style: preserve-3d;
+    transform: perspective(1000px); */
 }
 
     .name {
@@ -505,8 +505,8 @@ main {
     height: 7.5em;
     pointer-events: none;
 
-    transform-style: preserve-3d;
-    transform: perspective(1000px);
+    /* transform-style: preserve-3d;
+    transform: perspective(1000px); */
 }
 
     .basic-stage-img {
@@ -615,8 +615,8 @@ main {
     background-size: cover;
     pointer-events: none;
 
-    transform-style: preserve-3d;
-    transform: perspective(1000px);
+    /* transform-style: preserve-3d;
+    transform: perspective(1000px); */
     transform: translateZ(5px);
 }
 
@@ -628,9 +628,7 @@ main {
         background-repeat: no-repeat;
         background-size: 100%;
         box-shadow: 0.15em 0.15em 0.25em -0.05em rgba(32,31,31,0.70);
-
-        transform-style: preserve-3d;
-        transform: perspective(1000px);
+        
         transform: translateZ(5px);
     }
 
@@ -665,8 +663,8 @@ main {
     font-size: 0.7em;
     pointer-events: none;
 
-    transform-style: preserve-3d;
-    transform: perspective(1000px);
+    /* transform-style: preserve-3d;
+    transform: perspective(1000px); */
 }
 
     .banner-values-wrapper {
@@ -706,8 +704,8 @@ main {
     overflow: hidden;
     pointer-events: none;
 
-    transform-style: preserve-3d;
-    transform: perspective(1000px);
+    /* transform-style: preserve-3d;
+    transform: perspective(1000px); */
 }
 
     .moves-display div {

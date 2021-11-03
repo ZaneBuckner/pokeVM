@@ -1,36 +1,26 @@
 import { Pokemon } from './model.js';
 import { formatValues } from './utils.js';
 
+const pokemonCard = document.querySelector('.pokemon-card');
 
-
-//// EVENT DELEGATION => LOAD
+//// ON WINDOW => USER REFRESHES PAGE or INITIAL LOAD
 window.addEventListener('load', (e) => {
-    const pokemonCard = document.querySelector('.pokemon-card');
-
-
     const cardFontSize = (pokemonCard.offsetWidth / 30).toFixed(2);
+
     pokemonCard.style.fontSize = `${cardFontSize}px`;
-    
-    if (window.innerWidth >= 700) {
-        VanillaTilt.init(document.querySelector('.tilt'), {
-            reverse: false,
-            glare: true,
-            'max-glare': 0.40
-        });
-    };
+    vanillaTiltEvent();
 });
 
 
-//// EVENT DELEGATION => RESIZE
+//// ON WINDOW => USER ALTERS WINDOW SIZE (desktop)
 window.addEventListener('resize', (e) => {
-    const pokemonCard = document.querySelector('.pokemon-card');
     const cardWidth = pokemonCard.offsetWidth;
     const cardHeight = pokemonCard.offsetHeight;
-    const cardFontSize = (cardWidth / 30).toFixed(1);
+    const cardFontSize = (cardWidth / 30).toFixed(2);
 
     pokemonCard.style.fontSize = `${cardFontSize}px`;
-
-    testFluidTypography(cardWidth, cardHeight, cardFontSize);
+    vanillaTiltEvent();
+    // testFluidTypography(cardWidth, cardHeight, cardFontSize);
 });
 
 
@@ -40,7 +30,7 @@ document.addEventListener('click', (e) => {
     const menuIcon = document.getElementById('menu-icon');
     const isSearchOpen = document.querySelector('.search-dropdown').getAttribute('aria-expanded');
     const isMenuOpen = document.querySelector('.menu-dropdown').getAttribute('aria-expanded');
-    const isTiltOn = document.querySelector('.pokemon-card').getAttribute('aria-expanded');
+    // const isTiltOn = document.querySelector('.pokemon-card').getAttribute('aria-expanded');
 
     const el = e.target;
     const elParent = e.target.parentNode;
@@ -48,47 +38,82 @@ document.addEventListener('click', (e) => {
     if (el === searchIcon) { searchEvent().toggleSearch(isSearchOpen, isMenuOpen) };
     if (el === menuIcon) { menuEvent(e).toggleMenu(isMenuOpen, isSearchOpen) };
     if (elParent.classList.contains('matched-item')) { searchEvent().handleSelection(elParent) };
-    if (elParent.classList.contains('option')) { menuEvent().handleSelection(elParent, isTiltOn) };
+    // if (elParent.classList.contains('option')) { menuEvent().handleSelection(elParent, isTiltOn) };
 });
 
 
-//// EVENT DELEGATION => POKEMON CARD CLICK
-const pokemonCard = document.querySelector('.pokemon-card');
-pokemonCard.addEventListener('click', (e) => {
-    let x = e.clientX - e.target.offsetLeft;
-    let y = e.clientY - e.target.offsetTop;
-
-    const width = pokemonCard.offsetWidth;
-    const oneThirdWidth = (width * 0.33).toFixed(0);
-    const isLeftClick = x < oneThirdWidth;
-    const isRightClick = x > width - oneThirdWidth;
-
-    if (isLeftClick) { Pokemon.last() };
-    if (isRightClick) { Pokemon.next() };
-
-    // let rippleEffect = document.createElement('span');
-    // rippleEffect.classList.add('ripple-effect');
-    // rippleEffect.style.left = `${x}px`;
-    // rippleEffect.style.top = `${y}px`;
-    // pokemonCard.appendChild(rippleEffect);
-    
-    // setTimeout(() => rippleEffect.remove(), 500);
-});
+/// ON DOCUMENT => USER PRESSES A KEY
+document.addEventListener('keydown', (e) => paginationEvent().withKeypress(e.key));
 
 
 //// EVENT DELEGATION => INPUT
-document.addEventListener('input', (e) => {
-    const searchInput = document.querySelector('.search-input');
-    if (e.target === searchInput) { searchEvent().fetchSearchData(e.target.value) };
-});
+document.addEventListener('input', (e) => searchEvent().fetchSearchData(e.target.value));
 
 
-//// EVENT DELEGATION => KEYDOWN
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') { Pokemon.last() }
-    if (e.key === 'ArrowRight') { Pokemon.next() }
-});
+//// ON CARD ELEMENT => USER CLICKS ON THE POKEMON-CARD
+pokemonCard.addEventListener('click', (e) => paginationEvent().withClick(e));
 
+
+
+function vanillaTiltEvent() {
+    const tiltElement = document.querySelector('.tilt');
+    const parallaxElements = document.querySelectorAll('.parallax');
+    let isTiltEnabled = document.querySelector('.option-tilt').getAttribute('aria-expanded');
+    let isParallaxEnabled = document.querySelector('.option-parallax').getAttribute('aria-expanded');
+
+    if (window.innerWidth >= 700 && isTiltEnabled === 'false' && isParallaxEnabled === 'false') {
+        console.log('LARGE SCREEN');
+        enableTilt();
+        enableParallax();
+    };
+
+    if (window.innerWidth < 700 && isTiltEnabled === 'true' && isParallaxEnabled === 'true') {
+        console.log('SMALL SCREEN');
+        disableTilt();
+        disableParallax();
+    };
+        
+    function enableTilt() {
+        VanillaTilt.init(tiltElement, {
+            reverse: false,
+            glare: true,
+            'max-glare': 0.40
+        });
+        isTiltEnabled = 'true';
+    };
+
+    function disableTilt() {
+        tiltElement.vanillaTilt.destroy();
+        isTiltEnabled = 'false';
+    };
+
+    function enableParallax() {
+        parallaxElements.forEach(element => {
+            element.style.transformStyle = 'preserve-3d';
+            element.style.transform = 'perspective(1000px)';
+        });
+        isParallaxEnabled = 'true';
+    };
+    
+    function disableParallax() {
+        parallaxElements.forEach(element => {
+            element.style.transformStyle = '';
+            element.style.transform = '';
+        });
+        isParallaxEnabled = 'false';
+    };
+
+    
+    document.querySelector('.option-tilt').setAttribute('aria-expanded', isTiltEnabled);
+    document.querySelector('.option-parallax').setAttribute('aria-expanded', isParallaxEnabled);
+    
+    return {
+        enableTilt,
+        disableTilt,
+        enableParallax,
+        disableParallax
+    };
+}
 
 
 function searchEvent() {
@@ -118,6 +143,7 @@ function searchEvent() {
 
         searchDropdown.setAttribute('aria-expanded', isSearchOpen);
     };
+
 
     //// COMPARES INPUT TO A LOCALLY STORED JSON OBJECT.
     async function fetchSearchData(input) {
@@ -178,7 +204,6 @@ function searchEvent() {
         handleSelection
     }
 };
-
 
 
 function menuEvent() {
@@ -255,6 +280,33 @@ function menuEvent() {
 };
 
 
+function paginationEvent() {
+    function withClick(e) {
+        let x = e.clientX - e.target.offsetLeft;
+        let y = e.clientY - e.target.offsetTop;
+
+        const width = pokemonCard.offsetWidth;
+        const oneThirdWidth = (width * 0.33).toFixed(0);
+        const isLeftClick = x < oneThirdWidth;
+        const isRightClick = x > width - oneThirdWidth;
+
+        if (isLeftClick) { Pokemon.last() };
+        if (isRightClick) { Pokemon.next() };
+    };
+
+    function withKeypress(key) {
+        console.log(key)
+        if (key === 'ArrowLeft')    { Pokemon.last() }
+        if (key === 'ArrowRight')   { Pokemon.next() }
+    };
+
+    return {
+        withClick,
+        withKeypress
+    };
+};
+
+
 
 function testFluidTypography(cardWidth, cardHeight, cardFontSize) {
     console.clear();
@@ -265,10 +317,10 @@ function testFluidTypography(cardWidth, cardHeight, cardFontSize) {
     Viewport Width:  ${window.innerWidth}px
     HTML Font Size:  ${htmlFontSize}
     Pokemon Card:
-    \tWidth:         ${cardWidth}\tpx
-    \tHeight:        ${cardHeight}\tpx
-    \tAspect Ratio:  ${cardAspectRatio}\t%
-    \tFont Size:     ${(cardFontSize)}\tpx
+    \tWidth:         ${cardWidth} \t\tpx
+    \tHeight:        ${cardHeight} \t\tpx
+    \tAspect Ratio:  ${cardAspectRatio} \t%
+    \tFont Size:     ${(cardFontSize)}  \tpx
     `);
 };
 
@@ -280,3 +332,16 @@ function testFluidTypography(cardWidth, cardHeight, cardFontSize) {
 //     let pokemonCardCopy = pokemonCard.cloneNode(true);
 //     destination.appendChild(pokemonCardCopy);
 // }, 100);
+
+
+
+// pokemonCard.addEventListener('click', (e) => {
+
+//     // let rippleEffect = document.createElement('span');
+//     // rippleEffect.classList.add('ripple-effect');
+//     // rippleEffect.style.left = `${x}px`;
+//     // rippleEffect.style.top = `${y}px`;
+//     // pokemonCard.appendChild(rippleEffect);
+    
+//     // setTimeout(() => rippleEffect.remove(), 500);
+// });

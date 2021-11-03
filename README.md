@@ -5,7 +5,6 @@
 > PokéVM allows for endless exploration of all 898 currently discovered pokémon. Each pokémon is proportionality displayed as physical cards inspired by the original 1998 pokémon card base set.<br>
 > PokéVM utilizes [PokéAPI](https://pokeapi.co/), a RESTful API service, that pulls data from every main series Pokémon game.
 
-
 <br>
 
 | PokéVM Demo | Charizard - PokéVM | Charizard - 1998 Release |
