@@ -44,11 +44,11 @@ export const renderDom = function () {
 
         banner.innerHTML = (`
             <div class="banner-values-wrapper">
-                <img class="stamp-img" src="../resources/img/first-edition-stamp.png">
                 <h3 class="genus">${traitsObj.genus}</h3>
                 <h3 class="height">${formatValues().height(traitsObj.height)}</h3>
                 <h3 class="weight">${formatValues().weight(traitsObj.weight)}</h3>
             </div>
+            <img class="stamp-img" src="../resources/img/first-edition-stamp.png">
         `);
 
         fact.innerHTML = (`

@@ -18,8 +18,6 @@ window.addEventListener('load', (e) => {
             'max-glare': 0.40
         });
     };
-
-
 });
 
 
@@ -68,13 +66,13 @@ pokemonCard.addEventListener('click', (e) => {
     if (isLeftClick) { Pokemon.last() };
     if (isRightClick) { Pokemon.next() };
 
-    let rippleEffect = document.createElement('span');
-    rippleEffect.classList.add('ripple-effect');
-    rippleEffect.style.left = `${x}px`;
-    rippleEffect.style.top = `${y}px`;
-    pokemonCard.appendChild(rippleEffect);
+    // let rippleEffect = document.createElement('span');
+    // rippleEffect.classList.add('ripple-effect');
+    // rippleEffect.style.left = `${x}px`;
+    // rippleEffect.style.top = `${y}px`;
+    // pokemonCard.appendChild(rippleEffect);
     
-    setTimeout(() => rippleEffect.remove(), 500);
+    // setTimeout(() => rippleEffect.remove(), 500);
 });
 
 

@@ -48,15 +48,15 @@
 
     <main>
         <div class="pokemon-card tilt parallax">
-            <div class="card-content none">
-                <div class="card header"></div>
-                <div class="card evolution-display"></div>
-                <div class="card pokemon-display none"></div>
-                <div class="card banner none"></div>
-                <div class="card moves-display none"></div>
-                <div class="card damage-relations-wrapper none"></div>
-                <div class="card fact none"></div>
-                <div class="card copyright none"></div>
+            <div class="card-content parallax">
+                <div class="header parallax"></div>
+                <div class="evolution-display parallax"></div>
+                <div class="pokemon-display parallax"></div>
+                <div class="banner parallax"></div>
+                <div class="moves-display"></div>
+                <div class="damage-relations-wrapper"></div>
+                <div class="fact"></div>
+                <div class="copyright"></div>
             </div>
         </div>
     </main>
@@ -71,12 +71,12 @@
                     <!-- <p>bucknerzane@gmail.com</p> -->
                 </div>
 
-                <a href="https://github.com/ZaneBuckner" title="GitHub" target="_blank">
-                    <img srcset="./resources/icons/github-icon.svg" type="image/svg+xml">
+                <a href="https://github.com/ZaneBuckner/pokeVM" title="GitHub" target="_blank">
+                    <img src="./resources/icons/github-icon.svg" type="image/svg+xml">
                 </a>
 
                 <a href="https://www.linkedin.com/in/ZaneBuckner/" title="LinkedIn" target="_blank">
-                    <img srcset="./resources/icons/linkedin-icon.svg" type="image/svg+xml">
+                    <img src="./resources/icons/linkedin-icon.svg" type="image/svg+xml">
                 </a>
             </div>
         </div>
@@ -88,5 +88,12 @@
     <script type="module" src="./modules/controller.js"></script>
     <script type="module" src="./modules/view.js"></script>
     <script type="text/javascript" src="./modules/lib/vanilla-tilt.min.js"></script>
+    <!-- <script type="text/javascript">
+        VanillaTilt.init(document.querySelector('.tilt'), {
+            reverse: false,
+            glare: true,
+            'max-glare': 0.40
+        });
+    </script> -->
 </body>
 </html>
