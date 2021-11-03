@@ -6,20 +6,11 @@
 > PokéVM utilizes [PokéAPI](https://pokeapi.co/), a RESTful API service, that pulls data from every main series Pokémon game.
 
 <br>
-<div style="display:flex; justify-content:space-between; align-items:center; padding:0 20px">
-    <div>
-        <img src="./resources/gif/pokeVM-demo.gif" height="350" style="border:1px solid black; border-radius:10px">
-        <p style="text-align:center">PokéVM Demo</p>
-    </div>
-    <div>
-        <img src="./resources/img/charizard-pokevm.png" height="350">
-        <p style="text-align:center">Charizard - PokéVM</p>
-    </div>
-    <div>
-        <img src="./resources/img/charizard1998.png" height="350">
-        <p style="text-align:center">Charizard - 1998 Release</p>
-    </div>
-</div>
+
+| PokéVM Demo | Charizard - PokéVM | Charizard - 1998 Release |
+|     :---:      |     :---:      |     :---:      |
+| <img src="./resources/gif/pokeVM-demo.gif" height="350" style="border:1px solid black; border-radius:10px"> | <img src="./resources/img/charizard-pokevm.png" height="350"> | <img src="./resources/img/charizard1998.png" height="350"> |
+
 
 ### Goals & Purpose
 #### Implement a Design Pattern (Programming Architecture)
