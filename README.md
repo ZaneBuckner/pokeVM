@@ -1,48 +1,59 @@
-# PokéVM
---------
-## Objectives
-#### Clean & Meaningful Code
-1. Implementing a modular architecture - *The Reavealing Module Pattern*.
-    a. Module Pattern that emulates the concept of classes with public & private variables & methods encapsulated within an object.
-    c. Accomplished with high module cohesion, strict reduction in globally scope variables, and IIFEs (Immediately Involked Function Expressions) 
-#### Performant Operations (Without Disrupting Readability)
-    a. Accomplished using ES6 imports and exports.
-    b. Async / Await functions, and thoughtful implementation of modules.
-#### Improve My Understanding of Vanilla JavaScript, HTML/DOM, & CSS
-    a. Accomplished by
-        1. Learning about JavaScript under the hood (JS Event Loop)
-        2. Abstinence from any abstractions
-2. To become a better developer by gaining a deeper understanding of vanilla JavaScript, HTML, and CSS without the abstraction that libaries and frameworks provide (to fully appreciate them with future projects).
-    * Explore the capabilities of HTML
-3. To implement a responsive design for desktop, tablet, and mobile screen sizes.
-    - By understanding fluid typography (responsive CSS units).
-    - Limiting breakpoints and media queries.
+# ![Application Title](https://fontmeme.com/permalink/211102/9fbe96f6795f1efd2ced02ad9dae1756.png) <img class="site-logo" src="./resources/img/pokeball.png" alt="pokeball-img" height="50" align="left">
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fde35762-58ae-48a5-8678-722cf4ce28c4/deploy-status)](https://app.netlify.com/sites/pokevm/deploys)<br>
+<button name="button" onclick="https://pokevm.netlify.app/">Go To PokéVM</button>
+
+> PokéVM allows for endless exploration of all 898 currently discovered pokémon. Each pokémon is proportionality displayed as physical cards inspired by the original 1998 pokémon card base set.<br>
+> PokéVM utilizes [PokéAPI](https://pokeapi.co/), a RESTful API service, that pulls data from every main series Pokémon game.
 
 
-## Libaries
-[Granim.js](https://sarcadass.github.io/granim.js/)
-<a href="https://github.com/sarcadass/granim.js"><img src="https://img.shields.io/static/v1?label=sarcadass&message=granim.js&color=blue&logo=github" alt="sarcadass - granim.js"></a>
-<a href="https://github.com/sarcadass/granim.js/releases/"><img src="https://img.shields.io/github/tag/sarcadass/granim.js?include_prereleases=&sort=semver&color=blue" alt="GitHub tag"></a>
-[vanilla-tilt.js](https://micku7zu.github.io/vanilla-tilt.js/)
+![](./resources/gif/pokeVM-demo.gif)
+
+
+### Goals & Purpose
+#### Implement a Design Pattern (Programming Architecture)
+```text
+Model-View-Controller(MVC).
+The Reavealing Module Pattern.
+    • Provides structure and encapsulation.
+    • Immediately Invoked Function Expressions (IIFE)
+Focused on clean, concise, & meaningful code.
+```
+
+#### Improve My Programming Capability
+```text
+Why Vanilla JS | HTML | CSS?
+• To truly learn the language and to gain an appreciation for framework abstractions.
+
+Primary Concepts Covered:
+    • JavaScript's Event Loop & Hoisting
+    • Closures & Scope
+    • Promise handling with async..await operations
+    • Loose module coupling
+```
+
+#### Responsive Design
+```text
+Limited media queries.
+Utilized concepts of Fluid Typography:
+    • Pokémon card is horizontally and vertically responsive.
+    • Viewport-width coverage range: [375px, 1200px]
+```
+
+#### LIBARIES
+[Vanilla Tilt](https://micku7zu.github.io/vanilla-tilt.js/)<br>
 <a href="https://github.com/micku7zu/vanilla-tilt.js"><img src="https://img.shields.io/static/v1?label=micku7zu&message=vanilla-tilt.js&color=blue&logo=github" alt="micku7zu - vanilla-tilt.js"></a>
 <a href="https://github.com/micku7zu/vanilla-tilt.js/releases/"><img src="https://img.shields.io/github/release/micku7zu/vanilla-tilt.js?include_prereleases=&sort=semver&color=blue" alt="GitHub release"></a>
 
-### Sauce / Asset Sources
-#### Assets
-[PokéBall Img Icon](https://www.pngegg.com/en/png-wnotu)
-#### Fonts
-[Futura LT Font Family](https://www.cufonfonts.com/font/futura-lt)
-[Gill Sans Font-Face](https://www.cufonfonts.com/font/gill-sans-std)
-[Humanst 521 Font-family](https://freefontsdownload.net/free-humanst521-bt-font-30991.htm)
+#### IMAGES & ICONS
+[PokéBall Site Logo](https://www.pngegg.com/en/png-wnotu)<br>
+SVG images designed using [Figma](https://www.figma.com/), exported and optimized using [SVGOMG](https://jakearchibald.github.io/svgomg/).
+#### FONTS
+[Futura LT Font Family](https://www.cufonfonts.com/font/futura-lt)<br>
+[Gill Sans Font-Face](https://www.cufonfonts.com/font/gill-sans-std)<br>
+[Humanst 521 Font-family](https://freefontsdownload.net/free-humanst521-bt-font-30991.htm)<br>
 [Pokemon Font-Family](https://fontmeme.com/fonts/pokmon-font/)
-#### SVG Icons
-Inspiration was pulled from various sources but drawn then exported with Figma and optimized with the site listed in Utility Sites.
-#### Utility Sites
-[SVG Image Optimization](https://jakearchibald.github.io/svgomg/)
-[CSS Font-Face Generation (for .WOFF2)](https://transfonter.org/)
-CSS `@font-face` solves the need for installed font dependencies.
-
-
-
-### Notes
-* We want loosly coupled modules.
+#### UTILITY SITES
+[Figma](https://www.figma.com/) - Prototyping tool & vector graphics editor<br>
+[SVGOMG](https://jakearchibald.github.io/svgomg/) - SVG Optimization<br>
+[Transfonter](https://transfonter.org/) - Generates @font-face stylesheets (.WOFF2)<br>
+[this.markdown Logo](https://fontmeme.com/pokemon-font/) - PokéVM PNG image (readme specific)
