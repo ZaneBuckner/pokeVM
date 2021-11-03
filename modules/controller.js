@@ -219,28 +219,28 @@ function menuEvent() {
             }, 100);
         }
     
-        function toggleTilt(isTiltOn) {
-            console.log(isTiltOn)
-            let pokemonCard = document.querySelector('.pokemon-card');            
-            const tilt = document.querySelector('.tilt');
+        // function toggleTilt(isTiltOn) {
+        //     console.log(isTiltOn)
+        //     let pokemonCard = document.querySelector('.pokemon-card');            
+        //     const tilt = document.querySelector('.tilt');
 
-            if (isTiltOn) {
-                // tilt.vanillaTilt.destroy();
-                pokemonCard.classList.remove('tilt');
-                isTiltOn = 'false';
-                // return;
-            }
-            else {
-                // VanillaTilt.init(tilt);
-                pokemonCard.classList.add('tilt');
-                isTiltOn = 'true';
-            }
-            // isTiltOn = true;
+        //     if (isTiltOn) {
+        //         // tilt.vanillaTilt.destroy();
+        //         pokemonCard.classList.remove('tilt');
+        //         isTiltOn = 'false';
+        //         // return;
+        //     }
+        //     else {
+        //         // VanillaTilt.init(tilt);
+        //         // pokemonCard.classList.add('tilt');
+        //         // isTiltOn = 'true';
+        //     }
+        //     // isTiltOn = true;
 
-            // console.log('Tilt Option Selected');
-            pokemonCard.setAttribute('aria-expanded', isTiltOn);
-            console.log(isTiltOn);
-        }
+        //     // console.log('Tilt Option Selected');
+        //     // pokemonCard.setAttribute('aria-expanded', isTiltOn);
+        //     // console.log(isTiltOn);
+        // }
     
         function showFavorites(elParent) {
             console.log(elParent);

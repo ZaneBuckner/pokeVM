@@ -103,6 +103,7 @@ a, a:hover, a:focus, a:active {
 /* ========== SITE HEADER ==========
    ================================= */
 header {
+    /* border: 1px solid magenta; */
     position: relative;
     display: flex;
     justify-content: flex-start;
@@ -410,6 +411,8 @@ main {
 
     /* overflow: hidden; */
     user-select: none;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
 }
 
 .card-content {
@@ -428,6 +431,8 @@ main {
     animation: animatedGradient 5s ease-in-out infinite alternate;
     pointer-events: none;
 
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
     transform: translateZ(1px);
 }
 
@@ -448,6 +453,9 @@ main {
     height: 1.7em;
     margin-top: 1em;
     margin-bottom: 0.5em;
+
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
 }
 
     .name {
@@ -496,6 +504,9 @@ main {
     width: 7.5em;
     height: 7.5em;
     pointer-events: none;
+
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
 }
 
     .basic-stage-img {
@@ -653,6 +664,9 @@ main {
     font-stretch: condensed;
     font-size: 0.7em;
     pointer-events: none;
+
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
 }
 
     .banner-values-wrapper {
@@ -691,6 +705,9 @@ main {
     margin-top: 0.8em;
     overflow: hidden;
     pointer-events: none;
+
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
 }
 
     .moves-display div {

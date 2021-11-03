@@ -1,6 +1,6 @@
 # ![Application Title](https://fontmeme.com/permalink/211102/9fbe96f6795f1efd2ced02ad9dae1756.png) <img class="site-logo" src="./resources/img/pokeball.png" alt="pokeball-img" height="50" align="left">
-[![Netlify Status](https://api.netlify.com/api/v1/badges/fde35762-58ae-48a5-8678-722cf4ce28c4/deploy-status)](https://app.netlify.com/sites/pokevm/deploys)<br>
-<button name="button" onclick="https://pokevm.netlify.app/">Go To PokéVM</button><br>
+[![Badge](https://dkkvuysm0n0p.runkit.sh)](https://pokevm.netlify.app)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fde35762-58ae-48a5-8678-722cf4ce28c4/deploy-status)](https://app.netlify.com/sites/pokevm/deploys)
 
 > PokéVM allows for endless exploration of all 898 currently discovered pokémon. Each pokémon is proportionality displayed as physical cards inspired by the original 1998 pokémon card base set.<br>
 > PokéVM utilizes [PokéAPI](https://pokeapi.co/), a RESTful API service, that pulls data from every main series Pokémon game.
@@ -8,8 +8,8 @@
 <br>
 
 | PokéVM Demo | Charizard - PokéVM | Charizard - 1998 Release |
-|     :---:      |     :---:      |     :---:      |
-| <img src="./resources/gif/pokeVM-demo.gif" height="350" style="border:1px solid black; border-radius:10px"> | <img src="./resources/img/charizard-pokevm.png" height="350"> | <img src="./resources/img/charizard1998.png" height="350"> |
+|     :---:   |        :---:       |          :---:           |
+| <img src="./resources/gif/pokeVM-demo.gif" height="100%"> | <img src="./resources/img/charizard-pokevm.png" height="100%"> | <img src="./resources/img/charizard1998.png" height="100%"> |
 
 
 ### Goals & Purpose
