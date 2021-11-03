@@ -8,8 +8,8 @@
 <br>
 
 | PokéVM Demo | Charizard - PokéVM | Charizard - 1998 Release |
-|     :---:      |     :---:      |     :---:      |
-| <img src="./resources/gif/pokeVM-demo.gif" height="350" style="border:1px solid black; border-radius:10px"> | <img src="./resources/img/charizard-pokevm.png" height="350"> | <img src="./resources/img/charizard1998.png" height="350"> |
+|     :---:   |        :---:       |          :---:           |
+| <img src="./resources/gif/pokeVM-demo.gif" height="100%"> | <img src="./resources/img/charizard-pokevm.png" height="100%"> | <img src="./resources/img/charizard1998.png" height="100%"> |
 
 
 ### Goals & Purpose
