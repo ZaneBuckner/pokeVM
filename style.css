@@ -180,8 +180,8 @@ header {
     justify-content: flex-end;
     align-items: center;
     
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 2rem;
+    height: 2rem;
     margin-left: auto;
 
     border: 0.125rem solid #000;
@@ -211,12 +211,12 @@ header {
         }
 
     #search-icon {
-        position: absolute;
         cursor: pointer;
+        position: absolute;
 
         padding: 0.30rem;
-        height: 1.6rem;
-        width: 1.6rem;
+        height: 1.7rem;
+        width: 1.7rem;
     }
 
     .search-dropdown {
@@ -288,7 +288,7 @@ header {
             }
 
             .matched-name {
-                width: 70%;
+                width: 65%;
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
@@ -304,7 +304,7 @@ header {
             .matched-id {
                 position: relative;
                 z-index: 1;
-                width: 25%;
+                width: 30%;
                 margin-left: auto;
 
                 font-size: 0.7rem;
@@ -330,8 +330,8 @@ header {
 #menu-icon {
     position: relative;
     cursor: pointer;
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 2rem;
+    height: 2rem;
 
     margin-left: 0.3rem;
 
@@ -443,7 +443,7 @@ main {
     user-select: none;
     
     transform: perspective(1000px);
-    /* transform-style: preserve-3d; */
+    transform-style: preserve-3d;
 }
 
 .card-content {
@@ -627,7 +627,6 @@ main {
     position: relative;
     width: 100%;
     height: 18.4em;
-    /* height: 16.5em; */
     margin-bottom: 0.6em;
 
     background-image:
@@ -673,7 +672,6 @@ main {
    ==================================== */
 .banner {
     position: relative;
-    /* width: 33em; */
     width: 90%;
     height: 1.7em;
     margin: 0 auto;
@@ -734,7 +732,7 @@ main {
         justify-content: space-between;
         align-items: baseline;
 
-        padding-bottom: 0.4em;
+        padding-bottom: 0.3em;
     }
 
     .special-move {
@@ -783,7 +781,7 @@ main {
     bottom: 1em;
     
     width: 14em;
-    max-height: 8.5em;
+    max-height: 9em;
     margin-left: 1.4em;
 
     font-family: 'Gill Sans', serif;
@@ -796,11 +794,11 @@ main {
 }
 
     .damage-relation-group:nth-child(1) {
-        padding-bottom: 0.4em;
+        padding-bottom: 0.3em;
     }
 
     .damage-relation-group:nth-child(2) {
-        padding-top: 0.3em;
+        padding-top: 0.2em;
 
         border: 0em;
         border-top: 0.1em solid;
@@ -912,7 +910,7 @@ main {
     }
 
     .copyright p {
-        font-size: 0.5em;
+        font-size: 0.55em;
     }
 
     .card-generation {
