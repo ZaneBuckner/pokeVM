@@ -336,6 +336,7 @@ function testFluidTypography(cardWidth, cardHeight, cardFontSize) {
 
 function handleEmailAnimation() {
     const emailText = document.querySelector('.email-text');
+    emailText.style.display = 'block';
     emailText.classList.add('slide-out-animation');
 };
 
