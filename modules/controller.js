@@ -78,7 +78,7 @@ function searchEvent() {
         };
 
         function closeSearch() {
-            searchWrapper.style.width = '2rem';
+            searchWrapper.style.width = '1.8rem';
             searchInput.style.opacity = '0';
             searchDropdown.style.display = 'none';
             isSearchOpen = 'false';

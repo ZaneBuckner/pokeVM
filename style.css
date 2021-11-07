@@ -43,91 +43,15 @@ a, a:hover, a:focus, a:active {
     border-radius: 1rem;
 }
 
-/* .parallax {
-    transform-style: preserve-3d;
-    transform: perspective(1000px);
-}; */
-
-
-/* .ripple-effect {
-    position: absolute;
-    background: #FFF;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    border-radius: 50%;
-    -webkit-animation: rippleEffect 0.5s linear infinite;
-    animation: rippleEffect 0.5s linear infinite;
-}
-
-@-webkit-keyframes rippleEffect {
-    from {
-        width: 0em;
-        -webkit-width: 0em;
-        height: 0em;
-        -webkit-height: 0em;
-        opacity: 0.5;
-        -webkit-opacity: 0.5;
-    }
-    to {
-        width: 4em;
-        -webkit-width: 4em;
-        height: 4em;
-        -webkit-height: 4em;
-        opacity: 0;
-        -webkit-opacity: 0;
-    }
-}
-
-@keyframes rippleEffect {
-    from {
-        width: 0em;
-        height: 0em;
-        opacity: 0.5;
-    }
-    to {
-        width: 4em;
-        height: 4em;
-        opacity: 0;
-    }
-} */
-
 
 .preserve {
     transform-style: preserve-3d;
 }
 
-/*
-transfrom: translateZ(1px);
-    .card-content
-
-transfrom: translateZ(5px);
-    .pokemon-display
-    .display-frame
-    .banner-values-wrapper
-
-transfrom: translateZ(10px);
-    .name
-
-transfrom: translateZ(15px);
-    .basic-stage-img
-    .evolved-stage-img
-
-transfrom: translateZ(20px);
-    .pokemon-gif-wrapper
-    .stage-name
-    .display-image
-
-
-
-*/
-
-
 
 /* ========== SITE HEADER ==========
    ================================= */
 header {
-    /* border: 1px solid magenta; */
     position: relative;
     display: flex;
     justify-content: flex-start;
@@ -192,7 +116,7 @@ header {
     .search-input {
         border: 1px solid magenta;
         position: absolute;
-        left: 0rem;
+        left: 0;
         width: 100%;
         height: 100%;
 
@@ -222,7 +146,7 @@ header {
     .search-dropdown {
         display: none;
         position: absolute;
-        z-index: 10;
+        z-index: 2;
         top: 0;
         right: 0;
     }
@@ -248,6 +172,7 @@ header {
 
         .search-results {
             position: absolute;
+            z-index: 3;
             top: 2.3rem;
             right: 0rem;
 
@@ -259,6 +184,9 @@ header {
             border: 1px solid #B9B5B5;
             border-radius: 0.5rem;
             overflow: scroll;
+
+            /* transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d; */
         }
 
         .search-results :last-child {
@@ -358,6 +286,9 @@ header {
         border: 0.05rem solid #B9B5B5;
         background: #000;
         border-radius: 0.6rem;
+
+        transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
     }
 
     .menu-dropdown::before,
@@ -439,7 +370,6 @@ main {
     border-radius: 0.9em;
     background: #FFCB05;
 
-    /* overflow: hidden; */
     user-select: none;
     
     transform: perspective(1000px);
