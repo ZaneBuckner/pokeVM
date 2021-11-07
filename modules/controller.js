@@ -234,7 +234,7 @@ function menuEvent() {
 
 function vanillaTiltEvent() {
     const tiltElement = document.querySelector('.tilt');
-    const parallaxElements = document.querySelectorAll('.parallax');
+    const preserveElements = document.querySelectorAll('.preserve');
     let isTiltEnabled = document.querySelector('.option-tilt').getAttribute('aria-expanded');
     let isParallaxEnabled = document.querySelector('.option-parallax').getAttribute('aria-expanded');
 
@@ -263,17 +263,16 @@ function vanillaTiltEvent() {
     };
 
     function enableParallax() {
-        parallaxElements.forEach(element => {
-            // element.style.transform = 'perspective(1000px)';
-            // element.style.transformStyle = 'preserve-3d';
+        preserveElements.forEach(element => {
+            console.log(element)
+            element.style.transformStyle = 'preserve-3d';
         });
         isParallaxEnabled = 'true';
     };
     
     function disableParallax() {
-        parallaxElements.forEach(element => {
-            // element.style.transformStyle = '';
-            // element.style.transform = '';
+        preserveElements.forEach(element => {
+            element.style.transformStyle = '';
         });
         isParallaxEnabled = 'false';
     };
