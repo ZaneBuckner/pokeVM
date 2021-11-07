@@ -9,7 +9,7 @@
 
 | PokéVM Demo | Charizard - PokéVM | Charizard - 2016 Reprint | Charizard - 1999 Release |
 |     :---:   |        :---:       |          :---:           |          :---:           |
-| <img src="./resources/gif/pokeVM-demo.gif" height="100%"> | <img src="./resources/img/charizard-pokevm.png" height="100%"> | <img src="./resources/img/charizard2016.png" height="100%"> | <img src="./resources/img/charizard1999.png" height="100%"> |
+| <img src="./resources/gif/pokeVM-demo.gif" height="100%" width="auto"> | <img src="./resources/img/charizard-pokevm.png" height="100%" width="auto"> | <img src="./resources/img/charizard2016.png" height="100%" width="auto"> | <img src="./resources/img/charizard1999.png" height="100%" width="auto"> |
 
 
 ### Goals & Purpose
