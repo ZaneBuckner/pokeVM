@@ -286,7 +286,7 @@ header {
         background: #000;
         border-radius: 0.6rem;
 
-        transform: translateZ(1px);
+        transform: translateZ(21px);
     }
 
     .menu-dropdown::before,
