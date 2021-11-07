@@ -185,8 +185,8 @@ header {
             border-radius: 0.5rem;
             overflow: scroll;
 
-            /* transform-style: preserve-3d;
-            -webkit-transform-style: preserve-3d; */
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
         }
 
         .search-results :last-child {
