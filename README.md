@@ -7,7 +7,7 @@
 
 <br>
 
-<table style="width:100% padding:10px">
+<table>
     <tr style="font-size:16px">
         <th style="text-align:center">PokéVM Demo</th>
         <th style="text-align:center">PokéVM</th>
@@ -15,10 +15,10 @@
         <th style="text-align:center">1999 Release</th>
     </tr>
     <tr>
-        <td><img src="./resources/gif/pokeVM-demo.gif" height=250px></td>
-        <td><img src="./resources/img/charizard-pokevm.png" height=250px></td>
-        <td><img src="./resources/img/charizard2016.png" height=250px></td>
-        <td><img src="./resources/img/charizard1999.png" height=250px></td>
+        <td style="width:25%"><img src="./resources/gif/pokeVM-demo.gif"></td>
+        <td style="width:25%"><img src="./resources/img/charizard-pokevm.png"></td>
+        <td style="width:25%"><img src="./resources/img/charizard2016.png"></td>
+        <td style="width:25%"><img src="./resources/img/charizard1999.png"></td>
     </tr>
 </table>
 
