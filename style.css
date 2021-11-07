@@ -392,7 +392,7 @@ main {
     animation: animatedGradient 5s ease-in-out infinite alternate;
     pointer-events: none;
     
-    transform: translateZ(1px);
+    /* transform: translateZ(1px); */
 }
 
 @keyframes animatedGradient {
