@@ -275,7 +275,6 @@ header {
     .menu-dropdown {
         display: none;
         position: relative;
-        z-index: 1;
         top: 2.3rem;
         right: 4.1rem;
         
@@ -287,8 +286,7 @@ header {
         background: #000;
         border-radius: 0.6rem;
 
-        transform-style: preserve-3d;
-        -webkit-transform-style: preserve-3d;
+        transform: translateZ(1px);
     }
 
     .menu-dropdown::before,
@@ -391,8 +389,6 @@ main {
     background-size: 400%;
     animation: animatedGradient 5s ease-in-out infinite alternate;
     pointer-events: none;
-    
-    /* transform: translateZ(1px); */
 }
 
 @keyframes animatedGradient {
