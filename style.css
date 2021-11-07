@@ -524,8 +524,8 @@ main {
 .evolution-display {
     position: absolute;
     z-index: 1;
-    top: -1.2em;
-    left: -1em;
+    top: -0.9em;
+    left: -0.8em;
 
     width: 7.5em;
     height: 7.5em;
@@ -554,8 +554,8 @@ main {
 
     .evolves-from {
         position: absolute;
-        top: 1.9em;
-        left: 6.3em;
+        top: 1.5em;
+        left: 6.1em;
         width: 20em;
 
         padding-left: 0.6em;
@@ -578,7 +578,7 @@ main {
 
     .pokemon-gif-wrapper {
         position: relative;
-        top: 2.5em;
+        top: 2.6em;
         left: 0;
         right: 0;
         

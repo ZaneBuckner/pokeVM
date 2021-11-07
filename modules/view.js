@@ -42,15 +42,6 @@ export const renderDom = function () {
             </div>
         `);
 
-        // banner.innerHTML = (`
-        //     <div class="banner-values-wrapper">
-        //         <h3 class="genus">${traitsObj.genus}</h3>
-        //         <h3 class="height">${formatValues().height(traitsObj.height)}</h3>
-        //         <h3 class="weight">${formatValues().weight(traitsObj.weight)}</h3>
-        //     </div>
-        //     <img class="stamp-img" src="../resources/img/first-edition-stamp.png">
-        // `);
-
         banner.innerHTML = (`
             <div class="banner-values-wrapper">
                 <h3 class="genus">${traitsObj.genus}</h3>
@@ -122,7 +113,7 @@ export const renderDom = function () {
             const hasBabyAncestor = current.stage === 'basic' && previous.name !== 'none';
             const isSpecialPokemon = Pokemon.specialStatus();
 
-            pokemonName.style.marginLeft = '3.3em';
+            pokemonName.style.marginLeft = '3.5em';
             if (hasCommonAncestor) {
                 if (current.name !== undefined) {
                     return (`

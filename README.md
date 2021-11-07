@@ -7,9 +7,20 @@
 
 <br>
 
-| PokéVM Demo | Charizard - PokéVM | Charizard - 2016 Reprint | Charizard - 1999 Release |
-|     :---:   |        :---:       |          :---:           |          :---:           |
-| <img src="./resources/gif/pokeVM-demo.gif" height="100%" width="auto"> | <img src="./resources/img/charizard-pokevm.png" height="100%" width="auto"> | <img src="./resources/img/charizard2016.png" height="100%" width="auto"> | <img src="./resources/img/charizard1999.png" height="100%" width="auto"> |
+<table style="width:100% padding:10px">
+    <tr style="font-size:16px">
+        <th style="text-align:center">PokéVM Demo</th>
+        <th style="text-align:center">PokéVM</th>
+        <th style="text-align:center">2016 Reprint</th>
+        <th style="text-align:center">1999 Release</th>
+    </tr>
+    <tr>
+        <td><img src="./resources/gif/pokeVM-demo.gif" height=250px></td>
+        <td><img src="./resources/img/charizard-pokevm.png" height=250px></td>
+        <td><img src="./resources/img/charizard2016.png" height=250px></td>
+        <td><img src="./resources/img/charizard1999.png" height=250px></td>
+    </tr>
+</table>
 
 
 ### Goals & Purpose
@@ -25,7 +36,7 @@ Focused on clean, concise, & meaningful code.
 #### Improve My Programming Capability
 ```text
 Why Vanilla JS | HTML | CSS?
-• To truly learn the language and to gain an appreciation for framework abstractions.
+    • To truly learn the language and to gain an appreciation for framework abstractions.
 
 Primary Concepts Covered:
     • JavaScript's Event Loop & Hoisting
