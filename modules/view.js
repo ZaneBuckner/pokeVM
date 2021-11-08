@@ -3,7 +3,7 @@ import { formatValues, getBackgroundGradient } from './utils.js';
 
 
 export const renderDom = function () {
-    // TRAITS DOM ELEMENTS
+    // RENDER TRAITS
     const pokemonName = document.querySelector('.name');
     const cardContent = document.querySelector('.card-content');
     const header = document.querySelector('.header');
@@ -11,20 +11,19 @@ export const renderDom = function () {
     const banner = document.querySelector('.banner');
     const fact = document.querySelector('.fact');
     const copyright = document.querySelector('.copyright');
-    // EVOLUTION DOM ELEMENTS
+    // RENDER EVOLUTION
     const evolutionDisplay = document.querySelector('.evolution-display');
-    // MOVES DOM ELEMENTS
+    // RENDER MOVES
     const movesDisplay = document.querySelector('.moves-display');
-    // DAMAGE RELATIONS DOM ELEMENTS
+    // RENDER DAMAGE RELATIONS
     const damageStatsDisplay = document.querySelector('.damage-relations-wrapper');
-    
 
 
-
-    function renderTraits(traitsObj) {
-        console.log('TRAITS', traitsObj);
-        
-        cardContent.style.backgroundImage = getBackgroundGradient(traitsObj.types);
+    function renderTraits(traitsObj) {        
+        cardContent.style.backgroundImage = (`
+            ${getBackgroundGradient(traitsObj.types)},
+            url('./resources/img/backgrounds/white-grunge.jpg')
+        `);
 
         header.innerHTML = (`
             <h3 class="name">
@@ -78,7 +77,6 @@ export const renderDom = function () {
             `);
         };
     };
-
 
 
     function renderEvolution(evolutionObj) {
@@ -174,7 +172,6 @@ export const renderDom = function () {
     };
 
 
-
     function renderMoves(normalMoveObj, specialMoveObj) {
         movesDisplay.innerHTML = (`
             ${getNormalHTML(normalMoveObj)}
@@ -204,7 +201,6 @@ export const renderDom = function () {
             `);
         };
     };
-
 
 
     function renderDamageRelations(damageObj) {

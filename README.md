@@ -60,6 +60,8 @@ Utilized concepts of Fluid Typography:
 
 #### IMAGES & ICONS
 [PokéBall Site Logo](https://www.pngegg.com/en/png-wnotu)<br>
+[Pokemon Display Blended Image](https://www.stockvault.net/photo/280971/dark-room-with-spotlight-and-concrete-floor-smoky-background)<br>
+[Pokemon Display Blended Gif](https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif)<br>
 SVG images designed using [Figma](https://www.figma.com/), exported and optimized using [SVGOMG](https://jakearchibald.github.io/svgomg/).
 #### FONTS
 [Futura LT Font Family](https://www.cufonfonts.com/font/futura-lt)<br>
@@ -69,5 +71,6 @@ SVG images designed using [Figma](https://www.figma.com/), exported and optimize
 #### UTILITY SITES
 [Figma](https://www.figma.com/) - Prototyping tool & vector graphics editor<br>
 [SVGOMG](https://jakearchibald.github.io/svgomg/) - SVG Optimization<br>
+[EZGIF](https://ezgif.com/) - GIF Editor<br>
 [Transfonter](https://transfonter.org/) - Generates @font-face stylesheets (.WOFF2)<br>
 [this.markdown Logo](https://fontmeme.com/pokemon-font/) - PokéVM PNG image (readme specific)

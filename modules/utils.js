@@ -86,10 +86,9 @@ export function getBackgroundGradient(types) {
     let targetColor = colorReference[`${type}`].match(/\d+/g);
     
     const getAnalogousArray = (targetColor) => {
-        const hueVariations = [30, 15, -15, -30];
+        const hueVariations = [40, 20, 10, -10, -20, -40];
         let colors = hueVariations.map(value => `hsl(${targetColor[0] - value}, ${targetColor[1]}%, ${targetColor[2]}%)`);
-        let result = `linear-gradient(45deg, ${colors[0]}, ${colors[1]}, ${colors[2]}, ${colors[3]})`;
-        return result;
+        return `linear-gradient(45deg, ${colors[0]}, ${colors[1]}, ${colors[2]}, ${colors[3]}, ${colors[4]}, ${colors[5]})`;
     };
 
     return getAnalogousArray(targetColor);

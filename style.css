@@ -43,10 +43,18 @@ a, a:hover, a:focus, a:active {
     border-radius: 1rem;
 }
 
+.init-guide {
+    /* display: none; */
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
 
-/* .preserve {
-    transform-style: preserve-3d;
-} */
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 0.9em;
+}
 
 
 /* ========== SITE HEADER ==========
@@ -387,15 +395,17 @@ main {
 
     border-radius: 0.1em;
     box-shadow: inset 0.1em 0.1em 0.1em rgba(32, 31, 31, 0.10);
-    background-size: 400%;
-    animation: animatedGradient 5s ease-in-out infinite alternate;
-    pointer-events: none;
+    
+    background-position: left, center;
+    background-size: 400%, cover;
+    background-blend-mode: multiply, overlay;
+    animation: gradientAnimation 7s ease-in-out infinite alternate;
 }
 
-@keyframes animatedGradient {
-    0%      { background-position: left; }
-    100%    { background-position: right; }
-}
+    @keyframes gradientAnimation {
+        0% { background-position: left, center }
+        100% { background-position: right, center }
+    }
 
 
 /* ========== CARD(1) HEADER ==========
@@ -456,7 +466,6 @@ main {
 
     width: 7.5em;
     height: 7.5em;
-    pointer-events: none;
 }
 
     .basic-stage-img {
@@ -498,10 +507,6 @@ main {
         line-height: 0.9em;
         font-size: 0.9em;
     }
-
-        .evolves-from span {
-            cursor: pointer;
-        }
 
     .pokemon-gif-wrapper {
         position: relative;
@@ -555,16 +560,14 @@ main {
     width: 100%;
     height: 18.4em;
     margin-bottom: 0.6em;
-
-    background-image:
-        url('./resources/img/backgrounds/sparkles.gif'),
-        url('./resources/img/backgrounds/holosheet_3.webp'),
-        linear-gradient(125deg, #FF008450 15%, #FCA40040 30%, #FFFF0030 40%, #00FF8A20 60%, #00CFFF40 70%, #CC4CFA50 85%);
-    background-blend-mode: difference;
+    background:
+        linear-gradient(125deg, #FF008450 15%, #FCA40040 30%, #FFFF0030 40%, #00FF8A20 60%, #00CFFF40 70%, #CC4CFA50 85%),
+        url('./resources/img/backgrounds/room-spotlight-dark.jpg'),
+        url('./resources/gif/sparkles.gif');
+    background-blend-mode: multiply, exclusion;
     background-repeat: no-repeat;
     background-size: cover;
 
-    pointer-events: none;
     transform: translateZ(5px);
 }
 
@@ -575,7 +578,7 @@ main {
         background-image: url('./resources/img/display-frame.svg');
         background-repeat: no-repeat;
         background-size: 100%;
-        box-shadow: 0.15em 0.15em 0.25em -0.05em rgba(32,31,31,0.70);
+        box-shadow: 0.25em 0.25em 0.4em 0em rgb(32 31 31 / 50%);
         
         transform: translateZ(5px);
     }
@@ -604,15 +607,13 @@ main {
     margin: 0 auto;
 
     border-radius: 0.4em;
-    box-shadow: 0.1em 0.1em 0.15em -0.05em rgba(32,31,31,0.70);
+    box-shadow: 0.2em 0.2em 0.3em 0 rgba(32 31 31 / 50%);
 
     font-family: 'Gill Sans', serif;
     font-weight: 700;
     font-style: italic;
     font-stretch: condensed;
     font-size: 0.7em;
-
-    pointer-events: none;
 }
 
     .banner-values-wrapper {
@@ -622,7 +623,7 @@ main {
 
         width: 100%;
         height: 100%;
-        padding: 0 0.3em;
+        padding: 0.1em 0.3em 0em 0.3em;
 
         background-image: url('./resources/img/banner-image.svg');
         background-repeat: no-repeat;
@@ -634,10 +635,10 @@ main {
     .stamp-img {
         position: absolute;
         height: 2em;
-        /* top: 32em;
-        left: 0.5em; */
         top: 0em;
         left: -3em;
+
+        opacity: 85%;
     }
 
     .height {
@@ -651,7 +652,6 @@ main {
     width: 100%;
     margin-top: 0.8em;
     overflow: hidden;
-    pointer-events: none;
 }
 
     .moves-display div {
@@ -729,7 +729,7 @@ main {
 
         border: 0em;
         border-top: 0.1em solid;
-        border-image: linear-gradient(to right, #242424, rgba(255, 255, 255, 0) 100%);
+        border-image: linear-gradient(to right, rgba(36, 36, 36, 0.20), rgba(255, 255, 255, 0) 100%);
         border-image-slice: 1;
     }
 
@@ -795,8 +795,6 @@ main {
     border-bottom: 0.1em solid;
     border-image: linear-gradient(to right, rgb(255, 203, 5) 25%, rgba(255, 255, 255, 0) 100%);
     border-image-slice: 1;
-
-    pointer-events: none;
 }
 
     .fact p {
@@ -827,8 +825,6 @@ main {
     font-weight: 700;
     font-style: normal;
     font-stretch: condensed;
-
-    pointer-events: none;
 }
 
     .copyright p:nth-child(2),

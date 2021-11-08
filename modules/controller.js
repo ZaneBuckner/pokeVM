@@ -13,8 +13,6 @@ window.addEventListener('load', (e) => {
 });
 
 
-
-
 //// ON WINDOW => USER ALTERS WINDOW SIZE (desktop)
 window.addEventListener('resize', (e) => {
     const cardWidth = pokemonCard.offsetWidth;
@@ -22,8 +20,7 @@ window.addEventListener('resize', (e) => {
     const cardFontSize = (cardWidth / 30).toFixed(2);
 
     pokemonCard.style.fontSize = `${cardFontSize}px`;
-    // vanillaTiltEvent();
-    testFluidTypography(cardWidth, cardHeight, cardFontSize);
+    // testFluidTypography(cardWidth, cardHeight, cardFontSize);
 });
 
 
@@ -264,7 +261,6 @@ function vanillaTiltEvent() {
 
     function enableParallax() {
         preserveElements.forEach(element => {
-            console.log(element)
             element.style.transformStyle = 'preserve-3d';
         });
         isParallaxEnabled = 'true';
