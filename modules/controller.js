@@ -24,7 +24,7 @@ window.addEventListener('resize', (e) => {
 });
 
 
-//// EVENT DELEGATION => DOCUMENT CLICK
+//// ON DOCUMENT => USER CLICKS ON DOCUMENT
 document.addEventListener('click', (e) => {
     const searchIcon = document.getElementById('search-icon');
     const menuIcon = document.getElementById('menu-icon');
@@ -44,15 +44,15 @@ document.addEventListener('click', (e) => {
 
 
 /// ON DOCUMENT => USER PRESSES A KEY
-document.addEventListener('keydown', (e) => paginationEvent().withKeypress(e.key));
+document.addEventListener('keydown', (e) => paginationEvent().onKeypress(e.key));
 
 
-//// EVENT DELEGATION => INPUT
+//// ON DOCUMENT => USER SEARCH BAR INPUT
 document.addEventListener('input', (e) => searchEvent().fetchSearchData(e.target.value));
 
 
 //// ON CARD ELEMENT => USER CLICKS ON THE POKEMON-CARD
-pokemonCard.addEventListener('click', (e) => paginationEvent().withClick(e));
+pokemonCard.addEventListener('click', (e) => paginationEvent().onClick(e));
 
 
 
@@ -144,7 +144,7 @@ function searchEvent() {
 };
 
 
-
+//// TOGGLE SEARCH BAR; FETCH, RENDER, & HANDLE SEARCH RESULTS
 function menuEvent() {
     const menuDropdown = document.querySelector('.menu-dropdown');
     
@@ -286,28 +286,33 @@ function vanillaTiltEvent() {
 
 
 function paginationEvent() {
-    function withClick(e) {
+    function onClick(e) {
         let x = e.clientX - e.target.offsetLeft;
         let y = e.clientY - e.target.offsetTop;
 
         const width = pokemonCard.offsetWidth;
-        const oneThirdWidth = (width * 0.33).toFixed(0);
-        const isLeftClick = x < oneThirdWidth;
-        const isRightClick = x > width - oneThirdWidth;
+        const height = pokemonCard.offsetHeight;
 
-        if (isLeftClick) { Pokemon.last() };
-        if (isRightClick) { Pokemon.next() };
+        const isLeftClick = x < (width * 0.33);
+        const isRightClick = x > (width * 0.66);
+        const isLowerCenterClick = x > (width * 0.33) && x < (width * 0.66) && y > (height * 0.66);
+
+        if (isLeftClick)    { Pokemon.last() };
+        if (isRightClick)   { Pokemon.next() };
+        if (isLowerCenterClick) {
+            let random = Math.floor(Math.random() * 898 + 1);
+            Pokemon.init(random);
+        };
     };
 
-    function withKeypress(key) {
-        console.log(key)
+    function onKeypress(key) {
         if (key === 'ArrowLeft')    { Pokemon.last() }
         if (key === 'ArrowRight')   { Pokemon.next() }
     };
 
     return {
-        withClick,
-        withKeypress
+        onClick,
+        onKeypress
     };
 };
 

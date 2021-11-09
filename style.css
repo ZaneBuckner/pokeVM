@@ -400,6 +400,8 @@ main {
     background-size: 400%, cover;
     background-blend-mode: multiply, overlay;
     animation: gradientAnimation 7s ease-in-out infinite alternate;
+
+    pointer-events: none;
 }
 
     @keyframes gradientAnimation {
@@ -717,7 +719,6 @@ main {
     font-size: 0.85em;
 
     overflow: hidden;
-    pointer-events: none;
 }
 
     .damage-relation-group:nth-child(1) {

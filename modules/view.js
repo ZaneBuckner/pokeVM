@@ -80,12 +80,6 @@ export const renderDom = function () {
 
 
     function renderEvolution(evolutionObj) {
-        console.log(
-            '\nEVOLUTION', evolutionObj,
-            '\nCURRENT POKEMON', pokemon().current,
-            '\nPREVIOUS POKEMON', pokemon().previous
-        );
-
         evolutionDisplay.innerHTML = `${getEvolutionHTML(pokemon().current, pokemon().previous)}`;
 
         function pokemon() {
