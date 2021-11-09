@@ -359,8 +359,8 @@ header {
 
 /* ========== POKEMON CARD FRAME ==========
    Card size is determined based on the
-   available window height; the width is
-   determined accordingly.
+   limiting factor (available window height).
+   The width is determined accordingly.
    ======================================== */
 main {
     display: flex;
@@ -471,7 +471,7 @@ main {
 
     .basic-stage-img {
         position: absolute;
-        z-index: 3;
+        z-index: 1;
         top: -1.7em;
         left: 0.5em;
 
@@ -483,7 +483,7 @@ main {
 
     .evolved-stage-img {
         position: absolute;
-        z-index: 3;
+        z-index: 1;
 
         width: 100%;
         height: 100%;
@@ -513,6 +513,7 @@ main {
 
     .pokemon-gif-wrapper {
         position: relative;
+        z-index: 2;
         top: 2.6em;
         left: 0;
         right: 0;
