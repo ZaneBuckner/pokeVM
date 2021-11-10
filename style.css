@@ -359,17 +359,32 @@ header {
     justify-content: center;
     align-items: center;
 
-    border-radius: 0.9em;
+    /* border-radius: 0.9em;
     background: rgba(87, 87, 87, 0.20);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
+    pointer-events: none;
+    animation: fadeBlur 3s ease-in-out infinite alternate; */
+}
+
+.blur-effect {
+    border-radius: 0.9em;
+    background: rgba(87, 87, 87, 0.20);
+    /* backdrop-filter: blur(4px); */
+    /* -webkit-backdrop-filter: blur(4px); */
     pointer-events: none;
     animation: fadeBlur 3s ease-in-out infinite alternate;
 }
 
 @keyframes fadeBlur {
-    0% { backdrop-filter: blur(2px) }
-    100% { backdrop-filter: blur(6px) }
+    0% {
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+    }
+    100% {
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+    }
 }
 
     .guide-last {
@@ -406,8 +421,6 @@ header {
 
         .guide-next img {
             transform: scaleX(-1);
-            -moz-transform: scaleX(-1);
-            -o-transform: scaleX(-1);
         }
 
     .guide p {

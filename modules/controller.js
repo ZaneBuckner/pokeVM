@@ -164,15 +164,15 @@ function guideDisplay(isGuideEnabled) {
 
     function enableGuide() {
         guideDisplay.innerHTML = (`
-            <div class="guide guide-last">
+            <div class="guide guide-last blur-effect">
                 <p>Last</p>
                 <img src="./resources/icons/arrow-icon.svg">
             </div>
-            <div class="guide guide-next">
+            <div class="guide guide-next blur-effect">
                 <p>Next</p>
                 <img src="./resources/icons/arrow-icon.svg">
             </div>
-            <div class="guide guide-random">
+            <div class="guide guide-random blur-effect">
                 <p>Random</p>
                 <img src="./resources/icons/random-icon.svg">
             </div>
