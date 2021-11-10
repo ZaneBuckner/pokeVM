@@ -10,6 +10,7 @@ window.addEventListener('load', (e) => {
 
     pokemonCard.style.fontSize = `${cardFontSize}px`;
     vanillaTiltEvent();
+    guideDisplay().enable();
 });
 
 
@@ -28,8 +29,14 @@ window.addEventListener('resize', (e) => {
 document.addEventListener('click', (e) => {
     const searchIcon = document.getElementById('search-icon');
     const menuIcon = document.getElementById('menu-icon');
+    const menuOptionTilt = document.querySelector('.option-tilt');
+    const menuOptionParallax = document.querySelector('.option-parallax');
+    const menuOptionGuide = document.querySelector('.option-guide');
     const isSearchOpen = document.querySelector('.search-dropdown').getAttribute('aria-expanded');
     const isMenuOpen = document.querySelector('.menu-dropdown').getAttribute('aria-expanded');
+    const isTiltEnabled = document.querySelector('.option-tilt').getAttribute('aria-expanded');
+    const isParallaxEnabled = document.querySelector('.option-parallax').getAttribute('aria-expanded');
+    const isGuideEnabled = document.getElementById('guide-display').getAttribute('aria-expanded');
     const emailIcon = document.querySelector('.email-icon');
 
     const el = e.target;
@@ -37,7 +44,10 @@ document.addEventListener('click', (e) => {
 
     if (el === searchIcon)  { searchEvent().toggleSearch(isSearchOpen, isMenuOpen) };
     if (el === menuIcon)    { menuEvent().toggleMenu(isMenuOpen, isSearchOpen) };
-    if (el === emailIcon)   { handleEmailAnimation() }
+    if (el === emailIcon)   { handleEmailAnimation() };
+    // if (elParent === menuOptionTilt)        { toggleTilt(menuOptionTilt, isTiltEnabled) };
+    // if (elParent === menuOptionParallax)    { toggleParallax() };
+    if (elParent === menuOptionGuide)       { guideDisplay(isGuideEnabled) };
     if (elParent.classList.contains('matched-item')) { searchEvent().handleSelection(elParent) };
     if (elParent.classList.contains('option')) { menuEvent().handleSelection(elParent) };
 });
@@ -52,8 +62,11 @@ document.addEventListener('input', (e) => searchEvent().fetchSearchData(e.target
 
 
 //// ON CARD ELEMENT => USER CLICKS ON THE POKEMON-CARD
-pokemonCard.addEventListener('click', (e) => paginationEvent().onClick(e));
-
+pokemonCard.addEventListener('click', (e) => {
+    let isGuideEnabled = document.getElementById('guide-display').getAttribute('aria-expanded');
+    if (isGuideEnabled) { guideDisplay().disable() }
+    paginationEvent().onClick(e)
+});
 
 
 //// TOGGLE SEARCH BAR; FETCH, RENDER, & HANDLE SEARCH RESULTS
@@ -144,6 +157,41 @@ function searchEvent() {
 };
 
 
+//// ENABLE OR DISABLE GUIDE FEATURE
+function guideDisplay(isGuideEnabled) {
+    const guideDisplay = document.getElementById('guide-display');
+    isGuideEnabled === 'true' ? disableGuide() : enableGuide();
+
+    function enableGuide() {
+        guideDisplay.innerHTML = (`
+            <div class="guide guide-last">
+                <p>Last</p>
+                <img src="./resources/icons/arrow-icon.svg">
+            </div>
+            <div class="guide guide-next">
+                <p>Next</p>
+                <img src="./resources/icons/arrow-icon.svg">
+            </div>
+            <div class="guide guide-random">
+                <p>Random</p>
+                <img src="./resources/icons/random-icon.svg">
+            </div>
+        `);
+        guideDisplay.setAttribute('aria-expanded', 'true');
+    };
+
+    function disableGuide() {
+        guideDisplay.innerHTML = '';
+        guideDisplay.setAttribute('aria-expanded', 'false');
+    };
+
+    return {
+        enable: enableGuide,
+        disable: disableGuide
+    }
+};
+
+
 //// TOGGLE SEARCH BAR; FETCH, RENDER, & HANDLE SEARCH RESULTS
 function menuEvent() {
     const menuDropdown = document.querySelector('.menu-dropdown');
@@ -170,7 +218,6 @@ function menuEvent() {
 
         if (option === 'Tilt')      { toggleTilt() };
         if (option === 'Parallax')  { toggleParallax() };
-        if (option === 'Filters')   { showFilters() };
 
         function toggleTilt() {
             let isTiltEnabled = document.querySelector('.option-tilt').getAttribute('aria-expanded');
@@ -201,25 +248,6 @@ function menuEvent() {
             
             document.querySelector('.option-parallax').setAttribute('aria-expanded', isParallaxEnabled);
         };
-
-        function showFilters() {
-            console.log(`DISPLAY FILTERS`)
-        };
-
-        // function showFilters(elParent) {
-        //     console.log(('Filters Option Selected'));
-        //     setTimeout(function () {
-        //         const destination = document.querySelector('.test');
-        //         const pokemonCard = document.querySelector('.pokemon-card');
-        //         let pokemonCardCopy = pokemonCard.cloneNode(true);
-        //         destination.appendChild(pokemonCardCopy);
-        //     }, 100);
-        // }
-    
-        // function showFavorites(elParent) {
-        //     console.log(elParent);
-        //     console.log('Favorites Option Selected');
-        // }
     };
 
     return {
@@ -295,7 +323,7 @@ function paginationEvent() {
 
         const isLeftClick = x < (width * 0.33);
         const isRightClick = x > (width * 0.66);
-        const isLowerCenterClick = x > (width * 0.33) && x < (width * 0.66) && y > (height * 0.66);
+        const isLowerCenterClick = x > (width * 0.33) && x < (width * 0.66) && y > (height * 0.50);
 
         if (isLeftClick)    { Pokemon.last() };
         if (isRightClick)   { Pokemon.next() };
@@ -339,13 +367,3 @@ function handleEmailAnimation() {
     emailText.style.display = 'block';
     emailText.classList.add('slide-out-animation');
 };
-
-
-
-//// FOR IMPLEMENTING FAVORITE CARDS
-// setTimeout(function () {
-//     const destination = document.querySelector('.test');
-//     const pokemonCard = document.querySelector('.pokemon-card');
-//     let pokemonCardCopy = pokemonCard.cloneNode(true);
-//     destination.appendChild(pokemonCardCopy);
-// }, 100);
