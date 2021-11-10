@@ -348,7 +348,7 @@ header {
             }
 
 
-/* ============ CARD GUIDE OVERLAY =============
+/* =============== GUIDE OVERLAY ===============
    ============================================= */
 .guide {
     position: absolute;
@@ -362,6 +362,7 @@ header {
     border-radius: 0.9em;
     background: rgba(87, 87, 87, 0.20);
     backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     pointer-events: none;
     animation: fadeBlur 3s ease-in-out infinite alternate;
 }
