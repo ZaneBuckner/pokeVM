@@ -15,7 +15,7 @@
         <th style="text-align:center">1999 Release</th>
     </tr>
     <tr>
-        <td style="width:25%"><img src="./resources/gif/pokevm-demo.gif"></td>
+        <td style="width:25%"><img src="./resources/gif/pokeVM-demo.gif"></td>
         <td style="width:25%"><img src="./resources/img/charizard-pokevm.png"></td>
         <td style="width:25%"><img src="./resources/img/charizard2016.png"></td>
         <td style="width:25%"><img src="./resources/img/charizard1999.png"></td>
