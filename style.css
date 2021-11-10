@@ -364,7 +364,7 @@ header {
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     pointer-events: none;
-    transform: translateZ(21px);
+    transform: translateZ(20px);
     animation: fadeBlur 3s ease-in-out infinite alternate;
 }
 
@@ -377,7 +377,7 @@ header {
     animation: fadeBlur 3s ease-in-out infinite alternate;
 } */
 
-/* @keyframes fadeBlur {
+@keyframes fadeBlur {
     0% {
         backdrop-filter: blur(2px);
         -webkit-backdrop-filter: blur(2px);
@@ -386,7 +386,7 @@ header {
         backdrop-filter: blur(6px);
         -webkit-backdrop-filter: blur(6px);
     }
-} */
+}
 
     .guide-last {
         top: 0;
