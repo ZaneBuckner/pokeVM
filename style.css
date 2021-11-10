@@ -359,22 +359,23 @@ header {
     justify-content: center;
     align-items: center;
 
-    /* border-radius: 0.9em;
-    background: rgba(87, 87, 87, 0.20);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    pointer-events: none;
-    animation: fadeBlur 3s ease-in-out infinite alternate; */
-}
-
-.blur-effect {
     border-radius: 0.9em;
     background: rgba(87, 87, 87, 0.20);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     pointer-events: none;
-    /* animation: fadeBlur 3s ease-in-out infinite alternate; */
+    transform: translateZ(21px);
+    animation: fadeBlur 3s ease-in-out infinite alternate;
 }
+
+/* .blur-effect {
+    border-radius: 0.9em;
+    background: rgba(87, 87, 87, 0.20);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    pointer-events: none;
+    animation: fadeBlur 3s ease-in-out infinite alternate;
+} */
 
 /* @keyframes fadeBlur {
     0% {
@@ -485,7 +486,7 @@ main {
     animation: gradientAnimation 7s ease-in-out infinite alternate;
 
     pointer-events: none;
-    /* transform: translateZ(1px); */
+    transform: translateZ(1px);
 }
 
     @keyframes gradientAnimation {
