@@ -2,7 +2,7 @@ import { renderDom } from './view.js';
 
 export const Pokemon = (function () {
     let isInitiated = false;
-    let id = 1;
+    let id = 6;
     let currentName = '';
     let isPokemonSpecial;
     if (!isInitiated) { init(), isInitiated = true };
@@ -285,7 +285,7 @@ export const Pokemon = (function () {
     function nextPokemon() {
         // console.clear();
         if (id === 898) {
-            id = 6;
+            id = 1;
             return init(id);
         }
         id += 1;

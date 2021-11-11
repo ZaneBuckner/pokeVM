@@ -63,8 +63,8 @@ document.addEventListener('input', (e) => searchEvent().fetchSearchData(e.target
 
 //// ON CARD ELEMENT => USER CLICKS ON THE POKEMON-CARD
 pokemonCard.addEventListener('click', (e) => {
-    let isGuideEnabled = document.getElementById('guide-display').getAttribute('aria-expanded');
-    if (isGuideEnabled) { guideDisplay().disable() }
+    // let isGuideEnabled = document.getElementById('guide-display').getAttribute('aria-expanded');
+    // if (isGuideEnabled) { guideDisplay().disable() }
     paginationEvent().onClick(e)
 });
 
