@@ -285,7 +285,7 @@ export const Pokemon = (function () {
     function nextPokemon() {
         // console.clear();
         if (id === 898) {
-            id = 1;
+            id = 6;
             return init(id);
         }
         id += 1;

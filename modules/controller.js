@@ -36,7 +36,7 @@ document.addEventListener('click', (e) => {
     const isMenuOpen = document.querySelector('.menu-dropdown').getAttribute('aria-expanded');
     const isTiltEnabled = document.querySelector('.option-tilt').getAttribute('aria-expanded');
     const isParallaxEnabled = document.querySelector('.option-parallax').getAttribute('aria-expanded');
-    const isGuideEnabled = document.getElementById('guide-display').getAttribute('aria-expanded');
+    // const isGuideEnabled = document.getElementById('guide-display').getAttribute('aria-expanded');
     const emailIcon = document.querySelector('.email-icon');
 
     const el = e.target;
