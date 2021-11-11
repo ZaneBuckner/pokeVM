@@ -2,7 +2,7 @@ import { renderDom } from './view.js';
 
 export const Pokemon = (function () {
     let isInitiated = false;
-    let id = 6;
+    let id = 1;
     let currentName = '';
     let isPokemonSpecial;
     if (!isInitiated) { init(), isInitiated = true };
@@ -37,7 +37,6 @@ export const Pokemon = (function () {
                     );
 
                     function getNormalMove(data) {
-                        console.log('NORMAL MOVE', data)
                         if (data === undefined) { return 'none' }
                         return {
                             name: data.name,
@@ -47,7 +46,6 @@ export const Pokemon = (function () {
                     };
 
                     function getSpecialMove(data) {
-                        console.log('SPECIAL MOVE', data)
                         if (data === undefined) { return 'none' }
                         return {
                             name: data.name,
@@ -167,7 +165,6 @@ export const Pokemon = (function () {
         const promises = [fetchPokemon, fetchSpecies];
         return Promise.all(promises).then(responses => Promise.all(responses.map(res => res.json())))
             .then(([pokemon, species]) => {
-                console.log(pokemon), console.log(species);
                 
                 //// BUILD TRAITS OBJECT; RENDER DOM; RETURN URLS
                 function getTraits(data) {
@@ -276,7 +273,7 @@ export const Pokemon = (function () {
     }
 
     function lastPokemon() {
-        console.clear();
+        // console.clear();
         if (id === 1) {
             id = 898;
             return init(id);
@@ -286,7 +283,7 @@ export const Pokemon = (function () {
     };
 
     function nextPokemon() {
-        console.clear();
+        // console.clear();
         if (id === 898) {
             id = 1;
             return init(id);
@@ -295,12 +292,19 @@ export const Pokemon = (function () {
         init(id);
     };
 
+    function randomPokemon() {
+        let random = Math.floor(Math.random() * 898 + 1);
+        id = random;
+        return init(id);
+    };
+
     return {
         init,
         id: getId,
         name: getName,
         specialStatus: getSpecialStatus,
         last: lastPokemon,
-        next: nextPokemon
+        next: nextPokemon,
+        random: randomPokemon
     };
 })();

@@ -10,7 +10,7 @@ window.addEventListener('load', (e) => {
 
     pokemonCard.style.fontSize = `${cardFontSize}px`;
     vanillaTiltEvent();
-    guideDisplay().enable();
+    // guideDisplay().enable();
 });
 
 
@@ -325,17 +325,15 @@ function paginationEvent() {
         const isRightClick = x > (width * 0.66);
         const isLowerCenterClick = x > (width * 0.33) && x < (width * 0.66) && y > (height * 0.50);
 
-        if (isLeftClick)    { Pokemon.last() };
-        if (isRightClick)   { Pokemon.next() };
-        if (isLowerCenterClick) {
-            let random = Math.floor(Math.random() * 898 + 1);
-            Pokemon.init(random);
-        };
+        if (isLeftClick)            { Pokemon.last() };
+        if (isRightClick)           { Pokemon.next() };
+        if (isLowerCenterClick)     { Pokemon.random() };
     };
 
     function onKeypress(key) {
         if (key === 'ArrowLeft')    { Pokemon.last() }
         if (key === 'ArrowRight')   { Pokemon.next() }
+        if (key === ' ')            { Pokemon.random() }
     };
 
     return {
