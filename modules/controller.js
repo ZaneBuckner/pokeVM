@@ -10,7 +10,7 @@ window.addEventListener('load', (e) => {
 
     pokemonCard.style.fontSize = `${cardFontSize}px`;
     vanillaTiltEvent();
-    // guideDisplay().enable();
+    guideDisplay().enable();
 });
 
 
@@ -36,7 +36,7 @@ document.addEventListener('click', (e) => {
     const isMenuOpen = document.querySelector('.menu-dropdown').getAttribute('aria-expanded');
     const isTiltEnabled = document.querySelector('.option-tilt').getAttribute('aria-expanded');
     const isParallaxEnabled = document.querySelector('.option-parallax').getAttribute('aria-expanded');
-    // const isGuideEnabled = document.getElementById('guide-display').getAttribute('aria-expanded');
+    const isGuideEnabled = document.getElementById('guide-display').getAttribute('aria-expanded');
     const emailIcon = document.querySelector('.email-icon');
 
     const el = e.target;
@@ -63,8 +63,8 @@ document.addEventListener('input', (e) => searchEvent().fetchSearchData(e.target
 
 //// ON CARD ELEMENT => USER CLICKS ON THE POKEMON-CARD
 pokemonCard.addEventListener('click', (e) => {
-    // let isGuideEnabled = document.getElementById('guide-display').getAttribute('aria-expanded');
-    // if (isGuideEnabled) { guideDisplay().disable() }
+    let isGuideEnabled = document.getElementById('guide-display').getAttribute('aria-expanded');
+    if (isGuideEnabled) { guideDisplay().disable() }
     paginationEvent().onClick(e)
 });
 
