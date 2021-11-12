@@ -53,7 +53,8 @@ header {
     align-items: center;
 
     max-width: 90vw;
-    margin-top: 0.5rem;
+    /* margin-top: 0.5rem; */
+    margin-top: 2.5rem;
 }
 
     .logo-img {
