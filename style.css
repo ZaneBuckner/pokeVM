@@ -53,7 +53,7 @@ header {
     align-items: center;
 
     max-width: 90vw;
-    margin-top: 1rem;
+    margin-top: 0.75rem;
 }
 
     .logo-img {
@@ -442,7 +442,7 @@ main {
 
     width: 100%;
     height: 100%;
-    /* margin: 1.5rem 0; */
+
     margin: auto 0;
 }
 
@@ -935,7 +935,6 @@ main {
    ================================= */
 footer {
     max-width: 90vw;
-    /* margin-top: auto; */
 }
 
 .footer-wrapper {
