@@ -499,7 +499,7 @@ main {
     width: 100%;
     height: 1.7em;
     margin-top: 1em;
-    margin-bottom: 0.5em;
+    /* margin-bottom: 0.5em; */
 }
 
     .name {
@@ -935,7 +935,7 @@ main {
    ================================= */
 footer {
     max-width: 90vw;
-    margin-top: auto;
+    /* margin-top: auto; */
 }
 
 .footer-wrapper {
