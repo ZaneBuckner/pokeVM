@@ -73,4 +73,5 @@ SVG images designed using [Figma](https://www.figma.com/), exported and optimize
 [SVGOMG](https://jakearchibald.github.io/svgomg/) - SVG Optimization<br>
 [EZGIF](https://ezgif.com/) - GIF Editor<br>
 [Transfonter](https://transfonter.org/) - Generates @font-face stylesheets (.WOFF2)<br>
-[this.markdown Logo](https://fontmeme.com/pokemon-font/) - PokéVM PNG image (readme specific)
+[Favicon Generator](https://realfavicongenerator.net/)<br>
+[this.markdown Logo](https://fontmeme.com/pokemon-font/) - PokéVM PNG image (readme specific)<br>
