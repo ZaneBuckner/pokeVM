@@ -1,5 +1,5 @@
 # ![Application Title](https://fontmeme.com/permalink/211102/9fbe96f6795f1efd2ced02ad9dae1756.png) <img class="site-logo" src="./resources/img/pokeball.png" alt="pokeball-img" height="50" align="left">
-[![Badge](https://0x7wzk6tibrf.runkit.sh)](https://pokevm.netlify.app)
+[![Badge](https://tz95gzqvxymn.runkit.sh)](https://pokevm.netlify.app)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/fde35762-58ae-48a5-8678-722cf4ce28c4/deploy-status)](https://app.netlify.com/sites/pokevm/deploys)
 
 > PokéVM allows for endless exploration of all 898 currently discovered pokémon. Each pokémon is proportionality displayed as physical cards inspired by the original 1999 pokémon card base set and the 2016 updated reprint of the same design.<br>
