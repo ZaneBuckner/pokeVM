@@ -535,6 +535,11 @@ main {
             height: 100%;
         }
 
+.site-logo-img {
+    width: auto;
+    height: 2rem;
+}
+
 
 /* ========== CARD(2) EVOLUTION ==========
    ======================================= */
