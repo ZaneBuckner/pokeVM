@@ -45,11 +45,9 @@ document.addEventListener('click', (e) => {
     if (el === searchIcon)  { searchEvent().toggleSearch(isSearchOpen, isMenuOpen) };
     if (el === menuIcon)    { menuEvent().toggleMenu(isMenuOpen, isSearchOpen) };
     if (el === emailIcon)   { handleEmailAnimation() };
-    // if (elParent === menuOptionTilt)        { toggleTilt(menuOptionTilt, isTiltEnabled) };
-    // if (elParent === menuOptionParallax)    { toggleParallax() };
-    if (elParent === menuOptionGuide)       { guideDisplay(isGuideEnabled) };
-    if (elParent.classList.contains('matched-item')) { searchEvent().handleSelection(elParent) };
-    if (elParent.classList.contains('option')) { menuEvent().handleSelection(elParent) };
+    if (elParent === menuOptionGuide)                   { guideDisplay(isGuideEnabled) };
+    if (elParent.classList.contains('matched-item'))    { searchEvent().handleSelection(elParent) };
+    if (elParent.classList.contains('option'))          { menuEvent().handleSelection(elParent) };
 });
 
 
@@ -167,14 +165,26 @@ function guideDisplay(isGuideEnabled) {
             <div class="guide guide-last">
                 <p>Last</p>
                 <img src="./resources/icons/arrow-icon.svg">
+                <div class="secondary-control">
+                    <h3>secondary control</h3>
+                    <div class="key-icon"><span class="symbol">←</span></div>
+                </div>
             </div>
             <div class="guide guide-next">
                 <p>Next</p>
                 <img src="./resources/icons/arrow-icon.svg">
+                <div class="secondary-control">
+                    <h3>secondary control</h3>
+                    <div class="key-icon"><span class="symbol">→</span></div>
+                </div>
             </div>
             <div class="guide guide-random">
                 <p>Random</p>
                 <img src="./resources/icons/random-icon.svg">
+                <div class="secondary-control">
+                    <h3>secondary control</h3>
+                    <div class="key-icon">space</div>
+                </div>
             </div>
         `);
         guideDisplay.setAttribute('aria-expanded', 'true');
@@ -331,9 +341,19 @@ function paginationEvent() {
     };
 
     function onKeypress(key) {
-        if (key === 'ArrowLeft')    { Pokemon.last() }
-        if (key === 'ArrowRight')   { Pokemon.next() }
-        if (key === ' ')            { Pokemon.random() }
+        const isGuideEnabled = document.getElementById('guide-display').getAttribute('aria-expanded');
+        if (key === 'ArrowLeft') {
+            Pokemon.last();
+            isGuideEnabled ? guideDisplay().disable() : null;
+        }
+        if (key === 'ArrowRight') {
+            Pokemon.next();
+            isGuideEnabled ? guideDisplay().disable() : null;
+        }
+        if (key === ' ') {
+            Pokemon.random();
+            isGuideEnabled ? guideDisplay().disable() : null;
+        }
     };
 
     return {

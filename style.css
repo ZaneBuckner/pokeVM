@@ -385,6 +385,7 @@ header {
         height: 100%;
 
         border: 2px solid #FFCB05;
+        cursor: pointer;
     }
 
     .guide-random {
@@ -412,6 +413,39 @@ header {
         .guide-next img {
             transform: scaleX(-1);
         }
+
+        .secondary-control {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            width: 80%;
+            margin-top: 2em;
+            font-family: 'VAG Rounded';
+        }
+
+            .secondary-control h3 {
+                margin: 1em 0;
+                font-size: 0.75em;
+                color: #000;
+                text-transform: uppercase;
+            }
+
+            .key-icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 4.5em;
+                height: 2.5em;
+                
+                border: 3px solid #000;
+                border-radius: 10px;
+            }
+
+                .symbol {
+                    font-size: 2.5em;
+                }
 
     .guide p {
         font-family: 'Pokemon solid', serif;
