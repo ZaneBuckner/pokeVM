@@ -270,10 +270,9 @@ export const Pokemon = (function () {
 
     function getSpecialStatus() {
         return isPokemonSpecial;
-    }
+    };
 
     function lastPokemon() {
-        // console.clear();
         if (id === 1) {
             id = 898;
             return init(id);
@@ -283,7 +282,6 @@ export const Pokemon = (function () {
     };
 
     function nextPokemon() {
-        // console.clear();
         if (id === 898) {
             id = 1;
             return init(id);

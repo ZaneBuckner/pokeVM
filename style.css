@@ -420,7 +420,7 @@ header {
             justify-content: center;
             align-items: center;
 
-            width: 80%;
+            width: 100%;
             margin-top: 2em;
             font-family: 'VAG Rounded';
         }
@@ -439,8 +439,8 @@ header {
                 width: 4.5em;
                 height: 2.5em;
                 
-                border: 3px solid #000;
-                border-radius: 10px;
+                border: 0.2em solid #000;
+                border-radius: 0.5em;
             }
 
                 .symbol {
@@ -973,6 +973,7 @@ footer {
 
 .footer-wrapper {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
 
     width: 100%;
@@ -986,6 +987,10 @@ footer {
     color: #B69037;
 }
 
+    a[title="Portfolio"] {
+        margin-left: auto;
+    }
+
     .footer-link {
         height: 100%;
         width: auto;
@@ -997,39 +1002,6 @@ footer {
         height: 100%;
         width: auto;
     }
-
-        .email-link {
-            position: relative;
-            margin-left: auto;
-        }
-
-        .email-text {
-            position: absolute;
-            display: none;
-            z-index: -1;
-            top: 0.1rem;
-
-            opacity: 0;
-        }
-
-        .slide-out-animation {
-            animation: slideOutText 0.3s forwards cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        @keyframes slideOutText {
-            0% {
-                opacity: 0;
-                transform: translateX(0);
-            }
-            10% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-                transform: translateX(-8.5rem);
-                z-index: 0;
-            }
-        }
 
 
 /* ========== FLUID TYPOGRAPHY ==========

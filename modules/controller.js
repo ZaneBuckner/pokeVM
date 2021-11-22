@@ -5,7 +5,6 @@ const pokemonCard = document.querySelector('.pokemon-card');
 
 //// ON WINDOW => USER REFRESHES PAGE or INITIAL LOAD
 window.addEventListener('load', (e) => {
-    const pokemonCard = document.querySelector('.pokemon-card');
     const cardFontSize = (pokemonCard.offsetWidth / 30).toFixed(2);
 
     pokemonCard.style.fontSize = `${cardFontSize}px`;
@@ -29,22 +28,16 @@ window.addEventListener('resize', (e) => {
 document.addEventListener('click', (e) => {
     const searchIcon = document.getElementById('search-icon');
     const menuIcon = document.getElementById('menu-icon');
-    const menuOptionTilt = document.querySelector('.option-tilt');
-    const menuOptionParallax = document.querySelector('.option-parallax');
     const menuOptionGuide = document.querySelector('.option-guide');
     const isSearchOpen = document.querySelector('.search-dropdown').getAttribute('aria-expanded');
     const isMenuOpen = document.querySelector('.menu-dropdown').getAttribute('aria-expanded');
-    const isTiltEnabled = document.querySelector('.option-tilt').getAttribute('aria-expanded');
-    const isParallaxEnabled = document.querySelector('.option-parallax').getAttribute('aria-expanded');
     const isGuideEnabled = document.getElementById('guide-display').getAttribute('aria-expanded');
-    const emailIcon = document.querySelector('.email-icon');
 
     const el = e.target;
     const elParent = e.target.parentNode;
 
     if (el === searchIcon)  { searchEvent().toggleSearch(isSearchOpen, isMenuOpen) };
     if (el === menuIcon)    { menuEvent().toggleMenu(isMenuOpen, isSearchOpen) };
-    if (el === emailIcon)   { handleEmailAnimation() };
     if (elParent === menuOptionGuide)                   { guideDisplay(isGuideEnabled) };
     if (elParent.classList.contains('matched-item'))    { searchEvent().handleSelection(elParent) };
     if (elParent.classList.contains('option'))          { menuEvent().handleSelection(elParent) };
@@ -377,11 +370,4 @@ function testFluidTypography(cardWidth, cardHeight, cardFontSize) {
     \tAspect Ratio:  ${cardAspectRatio} \t%
     \tFont Size:     ${(cardFontSize)}  \tpx
     `);
-};
-
-
-function handleEmailAnimation() {
-    const emailText = document.querySelector('.email-text');
-    emailText.style.display = 'block';
-    emailText.classList.add('slide-out-animation');
 };
